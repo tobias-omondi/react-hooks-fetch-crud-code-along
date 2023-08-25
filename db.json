@@ -1,3 +1,40 @@
 {
-  "items": []
+  "items": [
+    {
+      "name": "",
+      "category": "Dessert",
+      "isInCart": false,
+      "id": 1
+    },
+    {
+      "name": "",
+      "category": "Dessert",
+      "isInCart": false,
+      "id": 2
+    },
+    {
+      "name": "milk",
+      "category": "Produce",
+      "isInCart": false,
+      "id": 3
+    },
+    {
+      "name": "milk",
+      "category": "Produce",
+      "isInCart": false,
+      "id": 4
+    },
+    {
+      "name": "milk",
+      "category": "Dairy",
+      "isInCart": false,
+      "id": 5
+    },
+    {
+      "name": "milk",
+      "category": "Dairy",
+      "isInCart": false,
+      "id": 6
+    }
+  ]
 }

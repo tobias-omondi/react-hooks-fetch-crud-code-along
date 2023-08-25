@@ -13,12 +13,17 @@ function ShoppingList() {
       .then((r) => r.json())
       .then((items) => setItems(items));
   }, []);
-
-   // add this callback function
-   function handleDeleteItem(deletedItem) {
+  
+  function handleDeleteItem(deletedItem) {
     console.log("In ShoppingCart:", deletedItem);
   }
-   
+  function handleDeleteItem(deletedItem) {
+    const updatedItems = items.filter((item) => item.id !== deletedItem.id);
+    setItems(updatedItems);
+  }
+  function handleUpdateItem(updatedItem) {
+    console.log("In ShoppingCart:", updatedItem);
+  }
   function handleUpdateItem(updatedItem) {
     const updatedItems = items.map((item) => {
       if (item.id === updatedItem.id) {
@@ -29,12 +34,10 @@ function ShoppingList() {
     });
     setItems(updatedItems);
   }
-
-
-  function handleAddItem(newItem) {
-    console.log("In ShoppingList:", newItem);
-  }
-
+  
+function handleAddItem(newItem) {
+  setItems([...items, newItem]);
+}
 
   function handleCategoryChange(category) {
     setSelectedCategory(category);
@@ -67,5 +70,4 @@ function ShoppingList() {
     </div>
   );
 }
-
 export default ShoppingList;

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function ItemForm() {
+function ItemForm(onAddItem) {
   const [name, setName] = useState("");
   const [category, setCategory] = useState("Produce");
 
@@ -11,6 +11,8 @@ function ItemForm() {
       category: category,
       isInCart: false,
     };
+    console.log(itemData);
+  
     fetch("http://localhost:4000/items", {
       method: "POST",
       headers: {
@@ -19,7 +21,7 @@ function ItemForm() {
       body: JSON.stringify(itemData),
     })
       .then((r) => r.json())
-      .then((newItem) => (newItem));
+      .then((newItem) => onAddItem(newItem));
   }
 
 
